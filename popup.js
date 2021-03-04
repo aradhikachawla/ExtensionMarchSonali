@@ -1,17 +1,37 @@
 // Future JavaScript will go here
 
 
-console.log('Hi there');
+console.log('Hi Popup');
 let urls = []
-launch();
-download_csv_file();
+//document.addEventListener('DOMContentLoaded', function() {
+  window.onload =  launch();
+//}, false);
+
+//document.addEventListener('DOMContentLoaded', function() {
+   download_csv_file();
+//}, false);
+
+console.log('second Hi Popup');
+
+
+
 
 
  //function to grab the urn needed from web 
+
+ //window.addEventListener ("load", launch, true);
+
+ 
 function launch() {
+console.log('Hi Popup Launch');
+//setTimeout(function(){ console.log('now start'); }, 11000);
+console.log('Hi Popup Launch');
+
 document.querySelectorAll('[data-urn]').forEach(elem=>urls.push('https://www.linkedin.com/feed/update/'+elem.getAttribute("data-urn")));
 console.log(urls);
 }
+
+ //create a user-defined function to download CSV file 
 
 
  //create a user-defined function to download CSV file 
@@ -47,6 +67,8 @@ console.log(urls);
     
 
      //provide the name for the CSV file to be downloaded
-     hiddenElement.download = 'Famous Personalities.csv';
+     hiddenElement.download = 'SalesflagsPost.csv';
+     document.body.appendChild(hiddenElement);
+
      hiddenElement.click();
  }
